@@ -1,0 +1,180 @@
+<html>
+<head>
+<title>rootdir - scan-build results</title>
+<link type="text/css" rel="stylesheet" href="scanview.css"/>
+<script src="sorttable.js"></script>
+<script language='javascript' type="text/javascript">
+function SetDisplay(RowClass, DisplayVal)
+{
+  var Rows = document.getElementsByTagName("tr");
+  for ( var i = 0 ; i < Rows.length; ++i ) {
+    if (Rows[i].className == RowClass) {
+      Rows[i].style.display = DisplayVal;
+    }
+  }
+}
+
+function CopyCheckedStateToCheckButtons(SummaryCheckButton) {
+  var Inputs = document.getElementsByTagName("input");
+  for ( var i = 0 ; i < Inputs.length; ++i ) {
+    if (Inputs[i].type == "checkbox") {
+      if(Inputs[i] != SummaryCheckButton) {
+        Inputs[i].checked = SummaryCheckButton.checked;
+        Inputs[i].onclick();
+      }
+    }
+  }
+}
+
+function returnObjById( id ) {
+    if (document.getElementById)
+        var returnVar = document.getElementById(id);
+    else if (document.all)
+        var returnVar = document.all[id];
+    else if (document.layers)
+        var returnVar = document.layers[id];
+    return returnVar;
+}
+
+var NumUnchecked = 0;
+
+function ToggleDisplay(CheckButton, ClassName) {
+  if (CheckButton.checked) {
+    SetDisplay(ClassName, "");
+    if (--NumUnchecked == 0) {
+      returnObjById("AllBugsCheck").checked = true;
+    }
+  }
+  else {
+    SetDisplay(ClassName, "none");
+    NumUnchecked++;
+    returnObjById("AllBugsCheck").checked = false;
+  }
+}
+</script>
+<!-- SUMMARYENDHEAD -->
+</head>
+<body>
+<h1>rootdir - scan-build results</h1>
+
+<table>
+<tr><th>User:</th><td>root@dbf589653c17</td></tr>
+<tr><th>Working Directory:</th><td>/rootdir</td></tr>
+<tr><th>Command Line:</th><td>make -j 2</td></tr>
+<tr><th>Clang Version:</th><td>clang version 7.0.1 (Fedora 7.0.1-6.fc29)
+</td></tr>
+<tr><th>Date:</th><td>Fri Apr 26 08:18:42 2019</td></tr>
+</table>
+<h2>Bug Summary</h2><table>
+<thead><tr><td>Bug Type</td><td>Quantity</td><td class="sorttable_nosort">Display?</td></tr></thead>
+<tr style="font-weight:bold"><td class="SUMM_DESC">All Bugs</td><td class="Q">29</td><td><center><input type="checkbox" id="AllBugsCheck" onClick="CopyCheckedStateToCheckButtons(this);" checked/></center></td></tr>
+<tr><th>Dead store</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Dead assignment</td><td class="Q">9</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_dead_store_dead_assignment');" checked/></center></td></tr>
+<tr><th>Logic error</th><th colspan=2></th></tr>
+<tr><td class="SUMM_DESC">Cast from non-struct type to struct type</td><td class="Q">20</td><td><center><input type="checkbox" onClick="ToggleDisplay(this,'bt_logic_error_cast_from_non-struct_type_to_struct_type');" checked/></center></td></tr>
+</table>
+<h2>Reports</h2>
+
+<table class="sortable" style="table-layout:automatic">
+<thead><tr>
+  <td>Bug Group</td>
+  <td class="sorttable_sorted">Bug Type<span id="sorttable_sortfwdind">&nbsp;&#x25BE;</span></td>
+  <td>File</td>
+  <td>Function/Method</td>
+  <td class="Q">Line</td>
+  <td class="Q">Path Length</td>
+  <td class="sorttable_nosort"></td>
+  <!-- REPORTBUGCOL -->
+</tr></thead>
+<tbody>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>themes/nodoka/nodoka-theme.c</td><td class="DESC">set_notification_hints</td><td class="Q">1107</td><td class="Q">1</td><td><a href="report-447a9a.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-447a9a.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>themes/slider/theme.c</td><td class="DESC">set_notification_hints</td><td class="Q">468</td><td class="Q">1</td><td><a href="report-1849ef.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-1849ef.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>themes/nodoka/nodoka-theme.c</td><td class="DESC">set_notification_hints</td><td class="Q">1095</td><td class="Q">1</td><td><a href="report-c9c438.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c9c438.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>themes/coco/coco-theme.c</td><td class="DESC">set_notification_hints</td><td class="Q">702</td><td class="Q">1</td><td><a href="report-67521a.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-67521a.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>themes/nodoka/nodoka-theme.c</td><td class="DESC">set_notification_hints</td><td class="Q">1095</td><td class="Q">1</td><td><a href="report-18f353.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-18f353.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>themes/coco/coco-theme.c</td><td class="DESC">set_notification_hints</td><td class="Q">690</td><td class="Q">1</td><td><a href="report-2f4ddd.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2f4ddd.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>themes/coco/coco-theme.c</td><td class="DESC">set_notification_hints</td><td class="Q">702</td><td class="Q">1</td><td><a href="report-d40bec.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-d40bec.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>themes/nodoka/nodoka-theme.c</td><td class="DESC">set_notification_hints</td><td class="Q">1107</td><td class="Q">1</td><td><a href="report-953a2d.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-953a2d.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>themes/standard/theme.c</td><td class="DESC">set_notification_hints</td><td class="Q">818</td><td class="Q">1</td><td><a href="report-134249.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-134249.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>themes/slider/theme.c</td><td class="DESC">set_notification_hints</td><td class="Q">456</td><td class="Q">1</td><td><a href="report-18735e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-18735e.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>themes/standard/theme.c</td><td class="DESC">set_notification_hints</td><td class="Q">806</td><td class="Q">1</td><td><a href="report-d6d39a.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-d6d39a.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>themes/slider/theme.c</td><td class="DESC">set_notification_hints</td><td class="Q">456</td><td class="Q">1</td><td><a href="report-5d17a6.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-5d17a6.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>daemon/daemon.c</td><td class="DESC">notify_daemon_notify_handler</td><td class="Q">1453</td><td class="Q">1</td><td><a href="report-1bf6bd.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-1bf6bd.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>themes/standard/theme.c</td><td class="DESC">set_notification_hints</td><td class="Q">818</td><td class="Q">1</td><td><a href="report-bd9d4e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-bd9d4e.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>daemon/daemon.c</td><td class="DESC">notify_daemon_notify_handler</td><td class="Q">1389</td><td class="Q">1</td><td><a href="report-631313.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-631313.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>themes/slider/theme.c</td><td class="DESC">set_notification_hints</td><td class="Q">468</td><td class="Q">1</td><td><a href="report-97a37e.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-97a37e.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>daemon/daemon.c</td><td class="DESC">notify_daemon_notify_handler</td><td class="Q">1441</td><td class="Q">1</td><td><a href="report-4e47b6.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-4e47b6.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>themes/coco/coco-theme.c</td><td class="DESC">set_notification_hints</td><td class="Q">690</td><td class="Q">1</td><td><a href="report-f60710.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-f60710.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>themes/standard/theme.c</td><td class="DESC">set_notification_hints</td><td class="Q">806</td><td class="Q">1</td><td><a href="report-3b2317.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-3b2317.html" -->
+</tr>
+<tr class="bt_logic_error_cast_from_non-struct_type_to_struct_type"><td class="DESC">Logic error</td><td class="DESC">Cast from non-struct type to struct type</td><td>daemon/daemon.c</td><td class="DESC">notify_daemon_notify_handler</td><td class="Q">1385</td><td class="Q">1</td><td><a href="report-ac4d39.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-ac4d39.html" -->
+</tr>
+<tr class="bt_dead_store_dead_assignment"><td class="DESC">Dead store</td><td class="DESC">Dead assignment</td><td>themes/standard/theme.c</td><td class="DESC">create_border_with_arrow</td><td class="Q">466</td><td class="Q">1</td><td><a href="report-3f1754.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-3f1754.html" -->
+</tr>
+<tr class="bt_dead_store_dead_assignment"><td class="DESC">Dead store</td><td class="DESC">Dead assignment</td><td>themes/standard/theme.c</td><td class="DESC">create_border_with_arrow</td><td class="Q">472</td><td class="Q">1</td><td><a href="report-528da3.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-528da3.html" -->
+</tr>
+<tr class="bt_dead_store_dead_assignment"><td class="DESC">Dead store</td><td class="DESC">Dead assignment</td><td>themes/standard/theme.c</td><td class="DESC">create_border_with_arrow</td><td class="Q">471</td><td class="Q">1</td><td><a href="report-331f5b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-331f5b.html" -->
+</tr>
+<tr class="bt_dead_store_dead_assignment"><td class="DESC">Dead store</td><td class="DESC">Dead assignment</td><td>themes/standard/theme.c</td><td class="DESC">create_border_with_arrow</td><td class="Q">472</td><td class="Q">1</td><td><a href="report-00cc6b.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-00cc6b.html" -->
+</tr>
+<tr class="bt_dead_store_dead_assignment"><td class="DESC">Dead store</td><td class="DESC">Dead assignment</td><td>themes/standard/theme.c</td><td class="DESC">create_border_with_arrow</td><td class="Q">466</td><td class="Q">1</td><td><a href="report-2d0050.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-2d0050.html" -->
+</tr>
+<tr class="bt_dead_store_dead_assignment"><td class="DESC">Dead store</td><td class="DESC">Dead assignment</td><td>themes/standard/theme.c</td><td class="DESC">create_border_with_arrow</td><td class="Q">467</td><td class="Q">1</td><td><a href="report-7de674.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-7de674.html" -->
+</tr>
+<tr class="bt_dead_store_dead_assignment"><td class="DESC">Dead store</td><td class="DESC">Dead assignment</td><td>themes/standard/theme.c</td><td class="DESC">create_border_with_arrow</td><td class="Q">467</td><td class="Q">1</td><td><a href="report-c3a138.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-c3a138.html" -->
+</tr>
+<tr class="bt_dead_store_dead_assignment"><td class="DESC">Dead store</td><td class="DESC">Dead assignment</td><td>themes/standard/theme.c</td><td class="DESC">create_border_with_arrow</td><td class="Q">471</td><td class="Q">1</td><td><a href="report-e199ee.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-e199ee.html" -->
+</tr>
+<tr class="bt_dead_store_dead_assignment"><td class="DESC">Dead store</td><td class="DESC">Dead assignment</td><td>capplet/mate-notification-properties.c</td><td class="DESC">notification_properties_position_notify</td><td class="Q">85</td><td class="Q">1</td><td><a href="report-62d270.html#EndPath">View Report</a></td>
+<!-- REPORTBUG id="report-62d270.html" -->
+</tr>
+</tbody>
+</table>
+
+</body></html>
